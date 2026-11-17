@@ -1,0 +1,13 @@
+const express = require('express');
+const router = express.Router();
+const authController = require('../controllers/authController');
+const { verifyToken } = require('../middleware/authMiddleware');
+
+// Sync Firebase user with MongoDB
+router.post('/sync', verifyToken, authController.sync);
+
+// Get current user profile
+router.get('/me', verifyToken, authController.getMe);
+
+module.exports = router;
+

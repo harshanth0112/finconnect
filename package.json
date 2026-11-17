@@ -1,0 +1,12 @@
+{
+  "name": "finconnect-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install-all": "npm install --prefix client && npm install --prefix server",
+    "client": "npm run dev --prefix client",
+    "server": "npm run dev --prefix server",
+    "test": "node ./server/src/testSuite.js && cd client && npm run build"
+  }
+}
+
